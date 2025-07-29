@@ -53,6 +53,9 @@ const Sidebar: React.FC<SidebarProps> = ({
             <Box>
                 Sidebar Navigation
             </Box>
+            <Box className = "overflow-y-auto h-full">
+                Song Library
+            </Box>
           </div>
         </div>
     );
