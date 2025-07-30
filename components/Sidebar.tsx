@@ -7,6 +7,7 @@ import { HiHome } from "react-icons/hi";
 
 import Box from "./Box" //because its in the same folder
 import SidebarItem from "./SidebarItem"
+import Library from "./Library"
 
 // defining typescript interface
 interface SidebarProps {
@@ -70,9 +71,12 @@ const Sidebar: React.FC<SidebarProps> = ({
                 </div>
             </Box>
             <Box className = "overflow-y-auto h-full">
-                Song Library
+                <Library />
             </Box>
           </div>
+          <main className="overflow-y-auto h-full py-2">
+            {children}
+          </main>
         </div>
     );
 }
