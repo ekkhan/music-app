@@ -1,14 +1,19 @@
-import { forwardRef } from "react";
+import { forwardRef } from "react"; // ref is a way to get direct access to a real DOM element 
 import { twMerge } from "tailwind-merge";
 
 interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
+    // <> below is a generic type parameter list
+    // forwardRef lets u pass the ref into custom components
+    // ref lets u control dom stuff
+    // first arg = ref will point to html button element
+    // second arg= component accepts props shaped like buttonprops
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     className,
     children,
     disabled,
-    type = "button",
+    type = "button", //defaults if type not provided
     ...props
 }, ref) => {
     return (
