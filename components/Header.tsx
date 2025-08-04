@@ -5,6 +5,7 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import Button from "./Button";
+
 interface HeaderProps {
     children: React.ReactNode;
     className?: string;
@@ -105,6 +106,7 @@ const Header: React.FC<HeaderProps> = (
                         <>
                           <div>
                             <Button
+                            onClick={() => {}}
                             className="
                             bg-transparent
                             text-neutral-300
@@ -114,6 +116,7 @@ const Header: React.FC<HeaderProps> = (
                           </div>
                           <div>
                             <Button
+                            onClick={() => {}}
                             className="
                             bg-white
                             px-6
@@ -124,6 +127,7 @@ const Header: React.FC<HeaderProps> = (
                         </>
                 </div>
             </div>
+            {children}
         </div>
     );
 }
