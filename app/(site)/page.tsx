@@ -24,7 +24,10 @@ export default function Home() {
           2xl:grid-cols-4
           gap-3
           mt-4 ">
-            <ListItem />
+            <ListItem
+              image="/images/liked.png"
+              name="Liked Songs"
+              href="liked"  />
           </div>
         </div>
       </Header>
