@@ -2,3 +2,5 @@ node_modules/
 .next/
 .DS_Store
 .env
+password.txt
+.env*.local
