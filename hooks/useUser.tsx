@@ -12,6 +12,7 @@ type UserContextType = {
     subscription: Subscription | null;
 };
 
+// like creating an empty mailbox, a blueprint
 export const UserContext = createContext<UserContextType | undefined>(
     undefined
 );
@@ -20,12 +21,9 @@ export interface Props {
     [propName: string]: any;
 }
 
+// filling that mailbox w actual data, provider handles this logic
 export const MyUserContextProvider = (props: Props) => {
-    const {
-        session,
-        isLoading: isLoadingUser,
-        supabaseClient: supabase
-    } = useSessionContext();
+    const {session, isLoading: isLoadingUser, supabaseClient: supabase} = useSessionContext();
     const user = useSupaUser();
     const accessToken = session?.access_token ?? null;
     const [isLoadingData, setIsLoadingData] = useState(false);
