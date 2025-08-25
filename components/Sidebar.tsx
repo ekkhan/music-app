@@ -8,12 +8,14 @@ import { HiHome } from "react-icons/hi";
 import Box from "./Box" //because its in the same folder
 import SidebarItem from "./SidebarItem"
 import Library from "./Library"
+import { Song } from "@/types";
 
 // defining typescript interface
 interface SidebarProps {
     // must receive prop called children
     // React.ReactNode means anything you can render in JSX
     children: React.ReactNode;
+    songs: Song[]
 }
 
 // constant Sidebar which is a React Functional Component
@@ -21,7 +23,8 @@ interface SidebarProps {
 
 // const <variableName>: <Type> = <value>;
 const Sidebar: React.FC<SidebarProps> = ({
-    children
+    children,
+    songs
 }) => {
     const pathname = usePathname();
 
@@ -71,7 +74,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 </div>
             </Box>
             <Box className = "overflow-y-auto h-full">
-                <Library />
+                <Library songs={songs}/>
             </Box>
           </div>
           <main className="overflow-y-auto h-full py-2 flex-1">
