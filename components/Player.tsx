@@ -3,6 +3,7 @@
 import useGetSongById from "@/hooks/useGetSongById";
 import useLoadSongUrl from "@/hooks/useLoadSongUrl";
 import usePlayer from "@/hooks/usePlayer";
+import PlayerContent from "./PlayerContent";
 
 const Player = () => {
     const player = usePlayer();
@@ -24,7 +25,10 @@ const Player = () => {
             py-2
             h-[80px]
             px-4">
-            Player!
+            <PlayerContent 
+              key={songUrl} /*super important note: if they key changes this whole PlayerContent component destroys itself which is needed*/
+              song={song}
+              songUrl={songUrl}/>
         </div>
     );
 };
