@@ -1,2 +1,1 @@
-# spotify-clone
-Spotify App Clone.
+a full-stack music app.
