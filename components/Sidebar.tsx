@@ -9,6 +9,8 @@ import Box from "./Box" //because its in the same folder
 import SidebarItem from "./SidebarItem"
 import Library from "./Library"
 import { Song } from "@/types";
+import usePlayer from "@/hooks/usePlayer";
+import { twMerge } from "tailwind-merge";
 
 // defining typescript interface
 interface SidebarProps {
@@ -27,6 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     songs
 }) => {
     const pathname = usePathname();
+    const player = usePlayer();
 
     // useMemo hook, recalculate the routes array only when pathname changes to optimize performance
     const routes = useMemo(()=> [
@@ -44,7 +47,9 @@ const Sidebar: React.FC<SidebarProps> = ({
         }
     ], [pathname]);
     return (
-        <div className="flex h-full">
+        <div className={twMerge(`
+          flex
+          h-full`, player.activeId && "h-[calc(100%-80px)]")}>
           <div
             className="
               hidden 
